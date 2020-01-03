@@ -15,7 +15,8 @@ router.post('/', async (req, res) => {
 	await questions.insertOne({
 		text: req.body.text,
 		answer: req.body.answer,
-		type: req.body.type
+		technology: req.body.technology,
+		difficulty: req.body.difficulty
 	});
 
 	res.status(201).send();
