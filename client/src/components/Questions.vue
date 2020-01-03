@@ -14,18 +14,11 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
 	name: 'Questions',
-	data() {
-		return {
-			lang: '',
-			level: ''
-		}
-	},
 	methods: {
 		...mapActions(['fetchQuestions'])
 	},
 	computed: {
 		...mapGetters(['allQuestions']),
-
 	},
 	created() {
 		this.fetchQuestions();

@@ -7,7 +7,7 @@ const state = {
 };
 
 const getters = {
-	allQuestions: (state) => state.questions
+	allQuestions: (state) => state.questions,
 };
 
 const mutations = {
