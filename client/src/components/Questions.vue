@@ -88,18 +88,20 @@ export default {
 
 	.question {
 		width: 900px;
-		max-width: 90%;
+		max-width: 80%;
 		background-color: #fff;
 		border-radius: 8px;
 		color: #fff;
 		display: block;
+		font-size: 16px;
 		margin: 50px auto;
-		padding: 10px;
+		padding: 10px 15px;
 		box-shadow: 0 5px 15px 0 hsla(0,2%,49%,.14);
 		position: relative;
 
 		&__title {
 			color: #151515;
+			line-height: 32px;
 		}
 
 		&__answer {
@@ -147,6 +149,10 @@ export default {
 			color: #4A47C7;
 			background-color: #fff;
 		}
+	}
+
+	@media screen and (max-width: 768px) {
+
 	}
 
 </style>
