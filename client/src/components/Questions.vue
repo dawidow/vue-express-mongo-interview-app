@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="select-group">
-            <label class="select__label">Technologia</label>
+            <label class="select__label">Sortuj według technologii</label>
             <select class="select" v-model="technology">
                 <option value="dowolna">dowolna</option>
                 <option value="html">html5</option>
@@ -14,12 +14,12 @@
             </select>
         </div>
 
-		<div v-for="question in data" :key="question._id" class="question">
-			<h2 class="question__title">{{ question.text }}</h2>
-			<button class="question__btn">Pokaż odpowiedź</button>
-			<p class="question__answer">{{ question.answer }}</p>
-			<p class="question__technology">{{ question.technology }}</p>
-			<p class="question__difficulty">{{ question.difficulty }}</p>
+		<div v-for="(question, index) in data" :key="question._id" class="question">
+			<h2 class="question__title" v-html="question.text">{{ question.text }}</h2>
+			<button  v-if="!isOpen" class="question__btn" @click="showAnswer(index)">Pokaż/ukryj odpowiedź</button>
+			<button  v-else class="question__btn" @click="hideAnswer()">Pokaż/ukryj odpowiedź</button>
+			<p  class="question__answer" :class="{active: index === activeItem}">{{ question.answer }}</p>
+			<p class="question__information">{{ question.technology }} / {{ question.difficulty }}</p>
 		</div>
 	</div>
 </template>
@@ -31,11 +31,21 @@ export default {
 	name: 'Questions',
 	data() {
 		return {
-			technology: 'dowolna'
+			technology: 'dowolna',
+			activeItem: -1,
+			isOpen: false
 		}
 	},
 	methods: {
-		...mapActions(['fetchQuestions'])
+		...mapActions(['fetchQuestions']),
+		showAnswer(idx) {
+			this.activeItem = idx;
+			this.isOpen = true;
+		},
+		hideAnswer() {
+			this.activeItem = -1;
+			this.isOpen = false;
+		}
 	},
 	computed: {
 		data() {
@@ -68,53 +78,74 @@ export default {
 
 <style lang="scss" scoped>
 
+	.select-group {
+		.select {
+			display: block;
+			margin: 10px auto 0;
+			width: 200px;
+		}
+	}
+
 	.question {
-		width: 700px;
+		width: 900px;
 		max-width: 90%;
-		height: 300px;
-		background-color: #151515;
+		background-color: #fff;
 		border-radius: 8px;
 		color: #fff;
 		display: block;
 		margin: 50px auto;
 		padding: 10px;
+		box-shadow: 0 5px 15px 0 hsla(0,2%,49%,.14);
 		position: relative;
 
 		&__title {
-			color: #fff;
+			color: #151515;
 		}
 
 		&__answer {
-			color: #6F6F6F;
+			color: #444444;
+			font-weight: 500;
+			padding: 10px 30px;
+			display: none;
+
+			&.active {
+				display: block;
+			}
 		}
 
 		&__btn {
 			background-color: transparent;
-			border: 1px solid #6F6F6F;
-			color: #fff;
+			border: 2px solid #4A47C7;
+			color: #4A47C7;
 			border-radius: 5px;
-			padding: 10px;
+			font-size: .8em;
+			font-weight: 500;
+			min-width: 220px;
+			padding: 10px 5px;
+			margin: 5px 0 15px;
 			text-transform: uppercase;
+			outline: none;
 			cursor: pointer;
-			transition: .3s all ease-in-out;
+			transition: .2s all ease-in-out;
 
 			&:hover {
-				background-color: #6F6F6F;
-				color: #151515;
-				border: 1px solid #fff;
+				background-color: #4A47C7;
+				color: #fff;
+				border: 2px solid #4A47C7;
 			}
 		}
 
-		&__difficulty {
+		&__information {
 			position: absolute;
 			top: -15px;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-transform: uppercase;
+			font-weight: 500;
 			padding: 5px 20px;
 			border-radius: 5px;
-			color: #6F6F6F;
-			background-color: #151515;
+			color: #4A47C7;
+			background-color: #fff;
 		}
 	}
 

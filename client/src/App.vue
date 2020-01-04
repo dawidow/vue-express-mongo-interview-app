@@ -15,7 +15,7 @@
 
 body, html {
 	margin: 0;
-	background-color: #000;
+	background-color: #F4F5F6;
 }
 
 #app {
@@ -23,7 +23,7 @@ body, html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+//   color: #2c3e50;
 }
 
 #nav {
