@@ -83,15 +83,15 @@ export default {
 			-moz-appearance: none;
 			appearance: none;
 			cursor: pointer;
-			background: url(https://image.flaticon.com/icons/svg/636/636035.svg) 96% / 15% no-repeat #eee;
+			background: url('../assets/click.svg') 96% / 15% no-repeat #eee;
 		}
 	}
 
 	.question {
 		width: 900px;
-		max-width: 80%;
+		max-width: 95%;
 		background-color: #fff;
-		border-radius: 8px;
+		border-radius: 15px;
 		color: #fff;
 		display: block;
 		font-size: 16px;

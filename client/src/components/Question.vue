@@ -51,7 +51,7 @@ export default {
 			cursor: pointer;
 			transition: .2s all ease-in-out;
 
-			.question__btn:hover {
+			&:hover {
 				background-color: #4A47C7;
 				color: #fff;
 				border: 2px solid #4A47C7;
@@ -69,6 +69,17 @@ export default {
 			border-radius: 5px;
 			color: #4A47C7;
 			background-color: #fff;
+		}
+
+		@media screen and (max-width: 768px) {
+			.question__information {
+				padding: 5px 8px;
+				font-size: .8em;
+			}
+
+			.question__answer {
+				padding: 0;
+			}
 		}
 
 </style>

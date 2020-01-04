@@ -6,17 +6,24 @@
 					<router-link to="/">Home</router-link>
 					<router-link to="/about">About</router-link>
 				</div>
-				<h1 class="hero__title">Rozmowa rekrutacyjna? Pikuś!</h1>
-				<p class="hero__description">Na tym portalu poznasz najczęściej spotykane pytania na rozmowie o prace o stanowisko Front-End Developera.</p>
+				<Hero />
 		  </div>
 	  </div>
     <router-view/>
+	<Footer />
   </div>
 </template>
 
 <script>
+import Hero from './components/Hero';
+import Footer from './components/Footer';
+
 export default {
 	name: 'App',
+	components: {
+		Hero,
+		Footer
+	}
 }
 </script>
 
@@ -49,15 +56,6 @@ body, html {
 		margin: 0 auto;
 		padding: 0 20px;
 		position: relative;
-
-		.hero__title {
-			color: #fff;
-			font-size: 2em;
-		}
-
-		.hero__description {
-			color: #fff;
-		}
 	}
 
 	&::before {
@@ -67,7 +65,7 @@ body, html {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-image: linear-gradient(-225deg, #4A47C7 0%, rgb(70, 68, 207) 48%, rgb(58, 56, 190) 100%);
+		background-image: linear-gradient(220deg, #4A47C7 0%, #2929a3 99%, #2929a3 100%);
 		border-radius: 0% 0% 50% 50% / 0% 0% 70% 70%;
 		transform: scalex(1.5);
 	}
@@ -89,9 +87,20 @@ body, html {
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.hero::before {
-		border-radius: 0% 0% 50% 50% / 0% 0% 35% 35%;
+@media screen and (max-width: 330px) {
+	.hero {
+		height: 90vh;
+	}
+}
+
+@media screen and (min-width: 331px) and (max-width: 768px) {
+
+	.hero {
+		height: 70vh;
+
+		&::before {
+			border-radius: 0% 0% 50% 50% / 0% 0% 35% 35%;
+		}
 	}
 }
 </style>
