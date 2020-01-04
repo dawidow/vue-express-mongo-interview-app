@@ -8,6 +8,30 @@ const state = {
 
 const getters = {
 	allQuestions: (state) => state.questions,
+	dowolna(state) {
+        return state.questions;
+    },
+	html(state) {
+        return state.questions.filter(item => item.technology === "html");
+    },
+    css(state) {
+        return state.questions.filter(item => item.technology === "css");
+	},
+	javascript(state) {
+        return state.questions.filter(item => item.technology === "javascript");
+	},
+	nodejs(state) {
+        return state.questions.filter(item => item.technology === "nodejs");
+	},
+	angular(state) {
+        return state.questions.filter(item => item.technology === "angular");
+	},
+	react(state) {
+        return state.questions.filter(item => item.technology === "react");
+	},
+	vue(state) {
+        return state.questions.filter(item => item.technology === "vue");
+	}
 };
 
 const mutations = {
