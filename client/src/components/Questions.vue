@@ -14,11 +14,12 @@
             </select>
         </div>
 
-		<div v-for="question in data" :key="question._id">
-			<h3>{{ question.text }}</h3>
-			<p>{{ question.answer }}</p>
-			<p>{{ question.technology }}</p>
-			<p>{{ question.difficulty }}</p>
+		<div v-for="question in data" :key="question._id" class="question">
+			<h2 class="question__title">{{ question.text }}</h2>
+			<button class="question__btn">Pokaż odpowiedź</button>
+			<p class="question__answer">{{ question.answer }}</p>
+			<p class="question__technology">{{ question.technology }}</p>
+			<p class="question__difficulty">{{ question.difficulty }}</p>
 		</div>
 	</div>
 </template>
@@ -66,5 +67,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+	.question {
+		width: 700px;
+		max-width: 90%;
+		height: 300px;
+		background-color: #151515;
+		border-radius: 8px;
+		color: #fff;
+		display: block;
+		margin: 50px auto;
+		padding: 10px;
+		position: relative;
+
+		&__title {
+			color: #fff;
+		}
+
+		&__answer {
+			color: #6F6F6F;
+		}
+
+		&__btn {
+			background-color: transparent;
+			border: 1px solid #6F6F6F;
+			color: #fff;
+			border-radius: 5px;
+			padding: 10px;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: .3s all ease-in-out;
+
+			&:hover {
+				background-color: #6F6F6F;
+				color: #151515;
+				border: 1px solid #fff;
+			}
+		}
+
+		&__difficulty {
+			position: absolute;
+			top: -15px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-transform: uppercase;
+			padding: 5px 20px;
+			border-radius: 5px;
+			color: #6F6F6F;
+			background-color: #151515;
+		}
+	}
 
 </style>
