@@ -14,38 +14,28 @@
             </select>
         </div>
 
-		<div v-for="(question, index) in data" :key="question._id" class="question">
-			<h2 class="question__title" v-html="question.text">{{ question.text }}</h2>
-			<button  v-if="!isOpen" class="question__btn" @click="showAnswer(index)">Pokaż/ukryj odpowiedź</button>
-			<button  v-else class="question__btn" @click="hideAnswer()">Pokaż/ukryj odpowiedź</button>
-			<p  class="question__answer" :class="{active: index === activeItem}">{{ question.answer }}</p>
-			<p class="question__information">{{ question.technology }} / {{ question.difficulty }}</p>
-		</div>
+		 <div v-for="question in data" :key="question._id" class="question">
+			<Question :question="question" />
+		 </div>
 	</div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
+import Question from './Question';
 
 export default {
 	name: 'Questions',
+	components: {
+		Question
+	},
 	data() {
 		return {
 			technology: 'dowolna',
-			activeItem: -1,
-			isOpen: false
 		}
 	},
 	methods: {
 		...mapActions(['fetchQuestions']),
-		showAnswer(idx) {
-			this.activeItem = idx;
-			this.isOpen = true;
-		},
-		hideAnswer() {
-			this.activeItem = -1;
-			this.isOpen = false;
-		}
 	},
 	computed: {
 		data() {
@@ -76,13 +66,24 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 	.select-group {
-		.select {
+		margin-top: 40px;
+
+		select {
 			display: block;
-			margin: 10px auto 0;
-			width: 200px;
+			margin: 10px auto;
+			width: 150px;
+			padding: 5px 35px 5px 5px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			height: 34px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			cursor: pointer;
+			background: url(https://image.flaticon.com/icons/svg/636/636035.svg) 96% / 15% no-repeat #eee;
 		}
 	}
 
@@ -98,60 +99,6 @@ export default {
 		padding: 10px 15px;
 		box-shadow: 0 5px 15px 0 hsla(0,2%,49%,.14);
 		position: relative;
-
-		&__title {
-			color: #151515;
-			line-height: 32px;
-		}
-
-		&__answer {
-			color: #444444;
-			font-weight: 500;
-			padding: 10px 30px;
-			display: none;
-
-			&.active {
-				display: block;
-			}
-		}
-
-		&__btn {
-			background-color: transparent;
-			border: 2px solid #4A47C7;
-			color: #4A47C7;
-			border-radius: 5px;
-			font-size: .8em;
-			font-weight: 500;
-			min-width: 220px;
-			padding: 10px 5px;
-			margin: 5px 0 15px;
-			text-transform: uppercase;
-			outline: none;
-			cursor: pointer;
-			transition: .2s all ease-in-out;
-
-			&:hover {
-				background-color: #4A47C7;
-				color: #fff;
-				border: 2px solid #4A47C7;
-			}
-		}
-
-		&__information {
-			position: absolute;
-			top: -15px;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			text-transform: uppercase;
-			font-weight: 500;
-			padding: 5px 20px;
-			border-radius: 5px;
-			color: #4A47C7;
-			background-color: #fff;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
 
 	}
 
