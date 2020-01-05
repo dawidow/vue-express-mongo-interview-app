@@ -14,7 +14,7 @@ export default {
 <style lang="scss">
 
 	.quote {
-		max-width: 60%;
+		max-width: 65%;
 		margin: 120px auto;
 		position: relative;
 
@@ -36,6 +36,12 @@ export default {
 			width: 150px;
 			height: 150px;
 			opacity: .05;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.quote {
+			max-width: 90%;
 		}
 	}
 
