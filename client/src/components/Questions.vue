@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="select-group">
-            <label class="select__label">Sortuj według technologii</label>
+            <label class="select__label">Sortuj pytania według technologii</label>
             <select class="select" v-model="technology">
                 <option value="dowolna">dowolna</option>
                 <option value="html">html5</option>

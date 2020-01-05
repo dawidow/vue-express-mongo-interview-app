@@ -3,13 +3,14 @@
 	  <div class="hero">
 		  <div class="content">
 				<div class="nav">
-					<router-link to="/">Home</router-link>
-					<router-link to="/about">About</router-link>
+					<router-link to="/">Strona główna</router-link>
+					<router-link to="/about">O projekcie</router-link>
 				</div>
 				<Hero />
 		  </div>
 	  </div>
     <router-view/>
+	<Quote />
 	<Footer />
   </div>
 </template>
@@ -17,12 +18,14 @@
 <script>
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import Quote from './components/Quote';
 
 export default {
 	name: 'App',
 	components: {
 		Hero,
-		Footer
+		Footer,
+		Quote
 	}
 }
 </script>
@@ -73,6 +76,7 @@ body, html {
 	.nav {
 		padding: 30px;
 		display: flex;
+		justify-content: space-between;
 
 		a {
 			font-weight: bold;
