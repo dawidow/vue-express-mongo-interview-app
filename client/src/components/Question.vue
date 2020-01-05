@@ -72,6 +72,10 @@ export default {
 		}
 
 		@media screen and (max-width: 768px) {
+			.question__title {
+				font-size: 22px;
+			}
+
 			.question__information {
 				padding: 5px 8px;
 				font-size: .8em;

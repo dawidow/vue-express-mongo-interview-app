@@ -16,15 +16,18 @@ export default {
 	.quote {
 		max-width: 65%;
 		margin: 120px auto;
+		font-size: 1.1em;
 		position: relative;
 
 		&__text {
 			position: relative;
 			margin: 0;
+			color: #141414;
 		}
 
 		&__author {
 			font-style: italic;
+			color: #141414;
 		}
 
 		&::before {
@@ -42,6 +45,7 @@ export default {
 	@media screen and (max-width: 768px) {
 		.quote {
 			max-width: 90%;
+			font-size: 1.2em;
 		}
 	}
 

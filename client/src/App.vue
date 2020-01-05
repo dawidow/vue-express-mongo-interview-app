@@ -94,6 +94,10 @@ body, html {
 @media screen and (max-width: 330px) {
 	.hero {
 		height: 90vh;
+
+		.nav {
+			font-size: .8em;
+		}
 	}
 }
 
@@ -101,6 +105,10 @@ body, html {
 
 	.hero {
 		height: 70vh;
+
+		.nav {
+			font-size: 1rem;
+		}
 
 		&::before {
 			border-radius: 0% 0% 50% 50% / 0% 0% 35% 35%;
