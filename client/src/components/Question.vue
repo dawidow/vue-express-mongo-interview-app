@@ -2,7 +2,7 @@
 	<div>
 			<h2 class="question__title" v-html="question.text">{{ question.text }}</h2>
 			<button class="question__btn" @click="toggle()">Pokaż/ukryj odpowiedź</button>
-			<p class="question__answer" v-show="isActive">{{ question.answer }}</p>
+			<p class="question__answer"  v-html="question.answer" v-show="isActive">{{ question.answer }}</p>
 			<p class="question__information">{{ question.technology }} / {{ question.difficulty }}</p>
 	</div>
 </template>
@@ -34,6 +34,7 @@ export default {
 			color: #444444;
 			font-weight: 500;
 			padding: 10px 30px;
+			text-align: left;
 		}
 
 		.question__btn {

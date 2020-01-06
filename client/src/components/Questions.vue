@@ -14,7 +14,8 @@
             </select>
         </div>
 
-		 <div v-for="question in data" :key="question._id" class="question">
+
+		<div v-for="question in data" :key="question._id" class="question">
 			<Question :question="question" />
 		 </div>
 	</div>
