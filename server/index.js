@@ -13,6 +13,12 @@ const questions = require('./routes/api/questions');
 
 app.use('/api/questions', questions);
 
+if(process.env.NODE_ENV === 'production') {
+	app.use(express.static(__dirname + '/public/'));
+
+
+}
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
