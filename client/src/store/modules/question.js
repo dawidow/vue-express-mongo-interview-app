@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/questions/';
+const url = 'api/questions/';
 
 const state = {
 	questions: [],

@@ -3,7 +3,7 @@
     <h1 class="about__header">O projekcie</h1>
 	<div class="about__wrapper">
 		<p class="about__description">Projekt powstał na potrzeby własne jak i do osobistego portfolio.</p>
-		<p class="about__description--main">Poniższy projekt został stworzony przy użyciu takich technologii jak: <br /><b>HTML5, CSS3, JavaScript (ES6), VueJS (Vuex, Vue-router), NodeJS (Express, MongoDB)</b></p><p class="about__description--main">Dane są pobierane dzięki napisanemu przeze mnie API typu REST. Baza danych znajduje się na serwerach MongoDB Atlas.</p>
+		<p class="about__description--main">Poniższy projekt został stworzony przy użyciu takich technologii jak: <br /><b>HTML5, CSS3, JavaScript (ES6), VueJS (Vuex, Vue-router, Axios), NodeJS (Express, MongoDB)</b></p><p class="about__description--main">Dane są pobierane dzięki napisanemu przeze mnie API typu REST. Baza danych znajduje się na serwerach MongoDB Atlas a strona została umieszczona na platformie Heroku..</p>
 		<p class="about__description--main">Link do repozytorium tego projektu dostępny jest pod <a href="https://github.com/dawidow/vue-express-mongo-interview-app">tym linkiem.</a></p>
 	</div>
   </div>
