@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <div>
 	  	<img class="hero__image" src="../assets/interview.svg" alt="interview flat image">
 		<h1 class="hero__title">Rozmowa rekrutacyjna? Pikuś!</h1>

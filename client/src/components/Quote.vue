@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <div class="quote">
 	  <h4 class="quote__text">"Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid."</h4>
 	  <p class="quote__author">~Albert Einstain</p>

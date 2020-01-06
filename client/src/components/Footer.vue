@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <div class="footer">
 	  <p class="footer__info">Made with   <span class="footer__heart"></span>  by <a class="footer__link" href="https://dowczarz.pl">Dawid Owczarz.</a></p>
   </div>

@@ -5,13 +5,18 @@ module.exports = {
   },
   'extends': [
     'plugin:vue/essential',
-    'eslint:recommended'
+	'eslint:recommended'
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'off' : 'off',
 	'no-debugger': process.env.NODE_ENV === 'production' ? 'off' : 'off',
 	'no-mixed-spaces-and-tabs': 'off',
 	'no-mixed-spaces-and-tabs': 0,
+	"skipStrings": true,
+	"skipRegExps": true,
+	"skipComments": true,
+	"skipTemplates": true,
+	"no-irregular-whitespace": 0
   },
   parserOptions: {
     parser: 'babel-eslint'
